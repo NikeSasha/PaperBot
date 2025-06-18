@@ -2,7 +2,7 @@ from slack_sdk import WebClient
 import os
 import datetime
 
-client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
+client = WebClient(token=os.environ['SLACK_TOKEN'])
 channel = "#test"
 
 def generate_digest():
