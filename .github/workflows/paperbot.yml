@@ -1,0 +1,27 @@
+name: PaperBot
+
+on:
+  schedule:
+    - cron: "0 12 * * *"  # Щодня о 9:00 за Києвом (UTC+3)
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install slack_sdk
+
+      - name: Run Python bot
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        run: python bot.py
