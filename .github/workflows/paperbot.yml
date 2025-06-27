@@ -1,7 +1,7 @@
 name: PaperBot
 
 on:
-  schedule:
+  #schedule: cron "*/5 * * * *" (there was smth like this, but it was disabled, because it is no longer needed to work like this/that)
   workflow_dispatch:
 
 jobs:
