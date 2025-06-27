@@ -2,7 +2,6 @@ name: PaperBot
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Щодня о 15:00 за Києвом (UTC+3)
   workflow_dispatch:
 
 jobs:
